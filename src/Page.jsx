@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
@@ -35,18 +35,18 @@ const MaintenanceTimer = ({ startDate, endDate }) => {
         <div className="timer">
             <Typography>Estimated Time Remaining</Typography>
             <Box sx={{ display: "flex", gap: 3 }}>
-                <Typography variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.days || 0}d</Typography>
-                <Typography variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.hours || 0}h</Typography>
-                <Typography variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.minutes || 0}m</Typography>
-                <Typography variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.seconds || 0}s</Typography>
+                <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.8rem' } }} variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.days || 0}d</Typography>
+                <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.8rem' } }} variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.hours || 0}h</Typography>
+                <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.8rem' } }} variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.minutes || 0}m</Typography>
+                <Typography sx={{ fontSize: { xs: '2.5rem', md: '3.8rem' } }} variant='h2' fontWeight={700} fontStyle={"italic"}>{timeLeft.seconds || 0}s</Typography>
             </Box>
         </div>
     );
 };
 
 const MaintenanceDetails = () => (
-    <Container maxWidth={"lg"} mt={5} sx={{ px: 3 }}>
-        <Typography variant='h3' fontWeight={700} gutterBottom>
+    <Container maxWidth={"lg"} sx={{ px: 3 }}>
+        <Typography variant='h3' fontWeight={700} gutterBottom mt={7}>
             Maintenance Details
         </Typography>
 
@@ -221,7 +221,13 @@ const MaintenancePages = () => {
                 </header>
 
                 <div>
-                    <button onClick={() => setPage('details')}>Maintenance Details</button>
+                    <Button
+                        variant='contained'
+                        sx={{ textTransform: "capitalize" }}
+                        onClick={() => setPage('details')}
+                    >
+                        Maintenance Details
+                    </Button>
                 </div>
             </nav>
 
