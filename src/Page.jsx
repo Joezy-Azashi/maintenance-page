@@ -236,7 +236,7 @@ const MaintenancePages = () => {
                     <Container maxWidth="lg">
                         <Grid container spacing={3}>
                             <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={7}>
-                                <Typography variant='h2' fontWeight={700}>We're undergoing maintenance</Typography>
+                                <Typography sx={{ fontSize: { xs: '3rem', md: '3.75rem' } }} variant='h2' fontWeight={700}>We're undergoing maintenance</Typography>
                                 <Typography mb={5}>We are performing some maintenance at the moment. We'll be back up shortly!</Typography>
                                 <MaintenanceTimer startDate={timerRange.startDate} endDate={timerRange.endDate} />
                             </Grid>
