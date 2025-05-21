@@ -1,5 +1,6 @@
 import { Alert, Snackbar, ThemeProvider } from '@mui/material';
 import Admin from './Admin';
+import MaintenanceDetails from './MaintenanceDetails';
 import './App.css';
 import MaintenancePages from './Page';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -50,6 +51,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MaintenancePages />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/maintenance-details" element={<MaintenanceDetails />} />
           </Routes>
         </SnackbarProvider>
       </ThemeProvider>
