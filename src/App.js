@@ -1,11 +1,12 @@
 import { Alert, Snackbar, ThemeProvider } from '@mui/material';
 import Admin from './Admin';
-import MaintenanceDetails from './MaintenanceDetails';
 import './App.css';
-import MaintenancePages from './Page';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createContext, useContext, useState } from 'react';
 import theme from './theme';
+import StatusPage from './StatusPage';
+import MaintenanceDetailPage from './MaintenanceDetailPage';
+import HomePage from './HomePage';
 
 const SnackbarContext = createContext();
 
@@ -49,9 +50,10 @@ function App() {
       <ThemeProvider theme={theme}>
         <SnackbarProvider>
           <Routes>
-            <Route path="/" element={<MaintenancePages />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/maintenance-details" element={<MaintenanceDetails />} />
+            <Route path="/status-page" element={<StatusPage />} />
+            <Route path="/maintenance-detail-page" element={<MaintenanceDetailPage />} />
           </Routes>
         </SnackbarProvider>
       </ThemeProvider>

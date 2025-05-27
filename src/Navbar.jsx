@@ -18,9 +18,9 @@ const Navbar = () => {
                 <Typography
                     variant='paragraph'
                     sx={{ textTransform: "capitalize", textDecoration: "underline", cursor: "pointer" }}
-                    onClick={() => navigate('/maintenance-details')}
+                    onClick={() => navigate('/status-page')}
                 >
-                    Maintenance Details
+                    Status Page
                 </Typography>
             </div>
         </nav>

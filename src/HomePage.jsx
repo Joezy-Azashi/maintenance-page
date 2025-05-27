@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import Footer from './Footer';
-import { Link, useNavigate } from 'react-router-dom';
-import { Facebook, Instagram, LinkedIn, Twitter } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import { Facebook, Instagram, LinkedIn, Twitter, MailOutline, LocalPhoneOutlined } from '@mui/icons-material';
 import Navbar from './Navbar';
 
-const MaintenanceTimer = ({ startDate, endDate }) => {
+const MaintenanceTimer = ({ endDate }) => {
     const calculateTimeLeft = () => {
         const difference = new Date(endDate) - new Date();
         let timeLeft = {};
@@ -46,8 +46,7 @@ const MaintenanceTimer = ({ startDate, endDate }) => {
     );
 };
 
-const MaintenancePages = () => {
-    const navigate = useNavigate();
+const HomePage = () => {
 
     const [timerRange, setTimerRange] = useState({
         startDate: JSON.parse(localStorage.getItem("timer"))?.startDate || new Date().toISOString(),
@@ -66,29 +65,32 @@ const MaintenancePages = () => {
                     <Container maxWidth="lg">
                         <Grid container spacing={3}>
                             <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={7}>
-                                <Typography sx={{ fontSize: { xs: '3rem', md: '3.75rem' } }} variant='h2' fontWeight={700}>We're undergoing maintenance</Typography>
+                                <Typography sx={{ fontSize: { xs: '2.45rem', md: '3.2rem' } }} variant='h2' fontWeight={700}>We're undergoing maintenance</Typography>
                                 <Typography mb={5}>We are performing some maintenance at the moment. We'll be back up shortly!</Typography>
-                                <MaintenanceTimer startDate={timerRange.startDate} endDate={timerRange.endDate} />
+                                <MaintenanceTimer endDate={timerRange.endDate} />
                             </Grid>
 
-                            <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ display: "flex", justifyContent: "center", alignItems: "end" }}>
-                                <img src="./main.png" width={600} alt="maintenance" />
-                            </Grid>
+                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={4} sx={{ background: "url('./main.png')", backgroundSize: "cover", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "23rem" }} />
                         </Grid>
 
                         <Grid container spacing={3} my={15}>
-                            <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ display: "flex", justifyContent: "center", alignItems: "start" }}>
-                                <img src="./contact-us.jpg" width={400} alt="contact-us" />
-                            </Grid>
-                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={7} sx={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
+                            <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ background: "url('./contact-us.jpg')", backgroundSize: "cover", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "28rem" }} />
+                            <Grid size={{ xs: 12, sm: 6, md: 6 }} sx={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
                                 <Box>
-                                    <Typography variant="h6" color="text.primary" gutterBottom>
+                                    <Typography variant="h6" sx={{ fontSize: { xs: '2.45rem', md: '3.2rem' } }} color="text.primary" gutterBottom>
                                         Contact
                                     </Typography>
-                                    <Typography color="text.secondary">
+
+                                    <Typography mb={5}>
+                                        We'd love to hear from you. Whether you have a question, feedback, or just want to say hello, feel free to reach out.
+                                    </Typography>
+
+                                    <Typography color="text.secondary" gutterBottom>
+                                        <MailOutline sx={{ mr: 1 }} />
                                         info@facioinnovations.com
                                     </Typography>
                                     <Typography color="text.secondary">
+                                        <LocalPhoneOutlined sx={{ mr: 1 }} />
                                         +1 (123) 456-7890
                                     </Typography>
 
@@ -120,4 +122,4 @@ const MaintenancePages = () => {
     );
 };
 
-export default MaintenancePages;
+export default HomePage;
