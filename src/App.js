@@ -1,12 +1,12 @@
 import { Alert, Snackbar, ThemeProvider } from '@mui/material';
-import Admin from './Admin';
+import Admin from './Pages/Admin';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createContext, useContext, useState } from 'react';
 import theme from './theme';
-import StatusPage from './StatusPage';
-import MaintenanceDetailPage from './MaintenanceDetailPage';
-import HomePage from './HomePage';
+import StatusPage from './Pages/StatusPage';
+import MaintenanceDetailPage from './Pages/MaintenanceDetailPage';
+import HomePage from './Pages/HomePage';
 
 const SnackbarContext = createContext();
 

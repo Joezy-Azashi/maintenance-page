@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import '../App.css';
 import { Box, Container, Grid, Typography } from '@mui/material';
-import Footer from './Footer';
+import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, LinkedIn, Twitter, MailOutline, LocalPhoneOutlined } from '@mui/icons-material';
-import Navbar from './Navbar';
+import Navbar from '../Components/Navbar';
 
 const MaintenanceTimer = ({ endDate }) => {
     const calculateTimeLeft = () => {
@@ -70,7 +70,7 @@ const HomePage = () => {
                                 <MaintenanceTimer endDate={timerRange.endDate} />
                             </Grid>
 
-                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={4} sx={{ background: "url('./main.png')", backgroundSize: "cover", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "23rem" }} />
+                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={4} sx={{ background: "url('./main.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "23rem" }} />
                         </Grid>
 
                         <Grid container spacing={3} my={15}>

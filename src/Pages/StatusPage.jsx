@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardContent, Chip, Divider, Grid, Paper, Tooltip, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { ChatBubbleOutline, LibraryBooks, NoteAdd } from '@mui/icons-material';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const StatusPage = () => {
@@ -14,6 +14,7 @@ const StatusPage = () => {
             label={status}
             color={status === 'Operational' ? 'success' : 'warning'}
             size="small"
+            sx={{ width: "9rem" }}
         />
     );
 
@@ -35,7 +36,7 @@ const StatusPage = () => {
                                     <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ padding: 0 }}>
                                         <Typography variant="subtitle1">Domain Services</Typography>
                                     </AccordionSummary>
-                                    <AccordionDetails>
+                                    <AccordionDetails sx={{padding: "8px 0 16px 0"}}>
                                         <Grid container spacing={2}>
                                             <Grid size={12} display="flex" justifyContent="space-between">
                                                 <Tooltip title="Generic Top-Level Domains">
@@ -89,7 +90,7 @@ const StatusPage = () => {
                                     <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ padding: 0 }}>
                                         <Typography variant="subtitle1">Enom.com</Typography>
                                     </AccordionSummary>
-                                    <AccordionDetails>
+                                    <AccordionDetails sx={{padding: "8px 0 16px 0"}}>
                                         <Grid container spacing={2}>
                                             {[
                                                 { app: 'Website', status: 'Under Maintenance' },
@@ -122,7 +123,7 @@ const StatusPage = () => {
             </section>
 
             <section style={{ backgroundColor: '#f9fafb', padding: '15px 20px' }}>
-                <Box sx={{ bgcolor: '#f9fafb', py: 4, cursor: "pointer" }} onClick={() => navigate('/maintenance-detail-page')}>
+                <Box sx={{ bgcolor: '#f9fafb', py: 4 }}>
                     <Paper
                         elevation={1}
                         sx={{
@@ -177,6 +178,14 @@ const StatusPage = () => {
                                 <Typography variant="body2" color="text.secondary" mt={0.5}>
                                     May 19, 2025 - 06:55 PDT
                                 </Typography>
+                            </Box>
+
+                            <Box
+                                sx={{ display: "flex", justifyContent: "end", fontWeight: 600, cursor: "pointer" }}
+                                mt={3}
+                                onClick={() => navigate('/maintenance-detail-page')}
+                            >
+                                <i>Read More...</i>
                             </Box>
                         </Box>
                     </Paper>
