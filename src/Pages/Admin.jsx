@@ -15,7 +15,7 @@ const Admin = () => {
     const [endDate, setEndDate] = useState('');
 
     const user = "Admin"
-    const pass = "facio"
+    const pass = "password"
 
     const login = (e) => {
         e.preventDefault();

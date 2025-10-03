@@ -70,7 +70,7 @@ const HomePage = () => {
                                 <MaintenanceTimer endDate={timerRange.endDate} />
                             </Grid>
 
-                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={4} sx={{ background: "url('./main.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "23rem" }} />
+                            <Grid size={{ xs: 12, sm: 6, md: 6 }} mt={4} sx={{ background: "url('./main.gif')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center", display: "flex", justifyContent: "center", alignItems: "center", height: "25rem" }} />
                         </Grid>
 
                         <Grid container spacing={3} my={15}>
