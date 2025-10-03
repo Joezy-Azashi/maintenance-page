@@ -11,7 +11,7 @@ const Navbar = () => {
                 style={{ cursor: "pointer" }}
                 onClick={() => navigate('/')}
             >
-                <img src="./facio-logo.png" width={100} alt="logo" />
+                LOGO
             </header>
 
             <div>
